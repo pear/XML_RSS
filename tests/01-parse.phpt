@@ -2,7 +2,7 @@
 XML_RSS::getItems
 --FILE--
 <?php
-require "../RSS.php";
+require "XML/RSS.php";
 
 $r =& new XML_RSS("test.rss");
 $r->parse();
