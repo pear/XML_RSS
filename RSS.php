@@ -77,6 +77,39 @@ class XML_RSS extends XML_Parser
      */
     var $textinputs = array();
 
+    /**
+     * @var array
+     */
+    var $parentTags = array('CHANNEL', 'ITEM', 'IMAGE', 'TEXTINPUT');
+
+    /**
+     * @var array
+     */
+    var $channelTags = array('TITLE', 'LINK', 'DESCRIPTION', 'IMAGE',
+                              'ITEMS', 'TEXTINPUT');
+
+    /**
+     * @var array
+     */
+    var $itemTags = array('TITLE', 'LINK', 'DESCRIPTION', 'PUBDATE');
+
+    /**
+     * @var array
+     */
+    var $imageTags = array('TITLE', 'URL', 'LINK');
+
+    var $textinputTags = array('TITLE', 'DESCRIPTION', 'NAME', 'LINK');
+
+    /**
+     * List of allowed Dublincore tags
+     *
+     * @var array
+     */
+    var $dcTags = array('DC:TITLE', 'DC:CREATOR', 'DC:SUBJECT', 'DC:DESCRIPTION',
+                         'DC:PUBLISHER', 'DC:CONTRIBUTOR', 'DC:DATE', 'DC:TYPE',
+                         'DC:FORMAT', 'DC:IDENTIFIER', 'DC:SOURCE', 'DC:LANGUAGE',
+                         'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS');
+
     // }}}
     // {{{ Constructor
 
@@ -182,60 +215,17 @@ class XML_RSS extends XML_Parser
      */
     function cdataHandler($parser, $cdata)
     {
-        switch ($this->insideTag) {
+        if (in_array($this->insideTag, $this->parentTags)) {
+            $tagName = strtolower($this->insideTag);
+            $var = $this->{$tagName . 'Tags'};
 
-            // Grab general channel information
-            case 'CHANNEL':
-                switch ($this->activeTag) {
-                    case 'TITLE':
-                    case 'LINK':
-                    case 'DESCRIPTION':
-                    case 'IMAGE':
-                    case 'ITEMS':
-                    case 'TEXTINPUT':
-                        $this->_add('channel', strtolower($this->activeTag),
-                                    $cdata);
-                        break;
-                }
-                break;
-
-            // Grab item information
-            case 'ITEM':
-                switch ($this->activeTag) {
-                    case 'TITLE':
-                    case 'LINK':
-                    case 'DESCRIPTION':
-                        $this->_add('item', strtolower($this->activeTag),
-                                    $cdata);
-                        break;
-                }
-                break;
-
-            // Grab image information
-            case 'IMAGE':
-                switch ($this->activeTag) {
-                    case 'TITLE':
-                    case 'URL':
-                    case 'LINK':
-                        $this->_add('image', strtolower($this->activeTag),
-                                    $cdata);
-                        break;
-                }
-                break;
-
-            // Grab image information
-            case 'TEXTINPUT':
-                switch ($this->activeTag) {
-                    case 'TITLE':
-                    case 'DESCRIPTION':
-                    case 'NAME':
-                    case 'LINK':
-                        $this->_add('textinput', strtolower($this->activeTag),
-                                    $cdata);
-                        break;
-                }
-                break;
-        }      
+            if (in_array($this->activeTag, $var) ||
+                in_array($this->activeTag, $this->dcTags)) {
+                $this->_add($tagName, strtolower($this->activeTag),
+                            $cdata);
+            }
+            
+        }
     }
 
     // }}}
