@@ -18,22 +18,6 @@ documents.
    <role>lead</role>
   </maintainer>
  </maintainers>
- <release>
-  <version>0.9</version>
-  <date>2002-01-11</date>
-  <state>stable</state>
-  <notes>This is the inital stable release.</notes>
-  <deps>
-   <dep type="pkg" rel="ge" version="1.0">XML_Tree</dep>
-  </deps>
-  <filelist><dir name="/" baseinstalldir="XML">
-    <file role="php" name="RSS.php" />
-     <dir name="tests" role="test">
-      <file name="01-parse.phpt" />
-      <file name="test.rss" />
-     </dir>
-    </dir>
-   </filelist>
  </release>
  <release>
   <version>0.9.1</version>
@@ -55,5 +39,25 @@ verbose error mode in PHP.
     </dir>
    </filelist>
  </release>
+
+ <changelog>
+   <release>
+    <version>0.9</version>
+    <date>2002-01-11</date>
+    <state>stable</state>
+    <notes>This is the inital stable release.</notes>
+    <deps>
+     <dep type="pkg" rel="ge" version="1.0">XML_Tree</dep>
+    </deps>
+    <filelist><dir name="/" baseinstalldir="XML">
+      <file role="php" name="RSS.php" />
+       <dir name="tests" role="test">
+        <file name="01-parse.phpt" />
+        <file name="test.rss" />
+       </dir>
+      </dir>
+     </filelist>
+    </release>
+  </changelog>
 
 </package>
