@@ -183,6 +183,7 @@ class XML_RSS extends XML_Parser
             $this->insideTag = '';
             $this->struct[] = array_merge(array('type' => strtolower($element)),
                                           $this->last);
+            break;
 
         case 'ITEM' :
             $this->items[] = $this->item;
