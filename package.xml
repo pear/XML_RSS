@@ -35,7 +35,8 @@ documents.
    <dir name="/" baseinstalldir="XML">
     <file role="php" name="RSS.php" />
     <dir name="tests" role="test">
-     <file name="01-parse.phpt" />
+     <file name="XML_RSS_Infrastructure_Test.php" />
+     <file name="XML_RSS_Parsing_Test.php" />
      <file name="test.rss" />
     </dir>
    </dir>
