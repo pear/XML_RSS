@@ -101,7 +101,9 @@ class XML_RSS extends XML_Parser
     var $textinputTags = array('TITLE', 'DESCRIPTION', 'NAME', 'LINK');
 
     /**
-     * List of allowed Dublincore tags
+     * List of allowed Dublin Core Metadata tags
+     *
+     * Detailed reference: http://www.dublincore.org/documents/dces/
      *
      * @var array
      */
