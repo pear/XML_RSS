@@ -169,6 +169,10 @@ class XML_RSS extends XML_Parser
      */
     function startHandler($parser, $element, $attribs)
     {
+        if (substr($element, 0, 4) == "RSS:") {
+            $element = substr($element, 4);
+        }
+
         switch ($element) {
             case 'CHANNEL':
             case 'ITEM':
@@ -201,6 +205,10 @@ class XML_RSS extends XML_Parser
      */
     function endHandler($parser, $element)
     {
+        if (substr($element, 0, 4) == "RSS:") {
+            $element = substr($element, 4);
+        }
+
         if ($element == $this->insideTag) {
             array_pop($this->insideTagStack);
             $this->insideTag = end($this->insideTagStack);
