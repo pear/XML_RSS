@@ -19,12 +19,13 @@ documents.
   </maintainer>
  </maintainers>
  <release>
-  <version>0.10.0</version>
-  <date>2003-10-05</date>
+  <version>x.x.x</version>
+  <date>2004-xx-xx</date>
   <state>stable</state>
   <notes>
 * Allows string inputs (useful for cached feeds, e.g. from databases)
 * Fixes dependency on XML_Parser and removes erroneous dep on XML_Tree
+* Fixed bug #557
   </notes>
   <deps>
    <dep type="pkg" rel="gt" version="1.0.1">XML_Parser</dep>
