@@ -23,16 +23,16 @@
 require_once 'XML/Parser.php';
 
 /**
- * RSS parser class.
- *
- * This class is a parser for Resource Description Framework (RDF) Site
- * Summary (RSS) documents. For more information on RSS see the
- * website of the RSS working group (http://www.purl.org/rss/).
- *
- * @author Martin Jansen <mj@php.net>
- * @version $Revision$
- * @access  public
- */
+* RSS parser class.
+*
+* This class is a parser for Resource Description Framework (RDF) Site
+* Summary (RSS) documents. For more information on RSS see the
+* website of the RSS working group (http://www.purl.org/rss/).
+*
+* @author Martin Jansen <mj@php.net>
+* @version $Revision$
+* @access  public
+*/
 class XML_RSS extends XML_Parser
 {
     // {{{ properties
@@ -148,15 +148,15 @@ class XML_RSS extends XML_Parser
     function startHandler($parser, $element, $attribs)
     {
         switch ($element) {
-        case 'CHANNEL':
-        case 'ITEM':
-        case 'IMAGE':
-        case 'TEXTINPUT':
-            $this->insideTag = $element;
-            break;
+            case 'CHANNEL':
+            case 'ITEM':
+            case 'IMAGE':
+            case 'TEXTINPUT':
+                $this->insideTag = $element;
+                break;
 
-        default:
-            $this->activeTag = $element;
+            default:
+                $this->activeTag = $element;
         }
     }
 
@@ -178,27 +178,25 @@ class XML_RSS extends XML_Parser
      */
     function endHandler($parser, $element)
     {
-        switch ($element) {
-        case $this->insideTag :
+        if ($element == $this->insideTag) {
             $this->insideTag = '';
             $this->struct[] = array_merge(array('type' => strtolower($element)),
                                           $this->last);
-            break;
+        }
 
-        case 'ITEM' :
+        if ($element == 'ITEM') {
             $this->items[] = $this->item;
             $this->item = '';
-            break;
+        }
 
-        case 'IMAGE' :
+        if ($element == 'IMAGE') {
             $this->images[] = $this->image;
             $this->image = '';
-            break;
+        }
 
-        case 'TEXTINPUT' :
+        if ($element == 'TEXTINPUT') {
             $this->textinputs = $this->textinput;
             $this->textinput = '';
-            break;
         }
 
         $this->activeTag = '';
