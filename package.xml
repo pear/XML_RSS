@@ -44,7 +44,7 @@ This release fixes a small bug that caused warnings when using a
 verbose error mode in PHP.
   </notes>
   <deps>
-   <dep type="pkg" rel="ge" version="1.0">XML_Tree</dep>
+   <dep type="pkg" rel="has">XML_Tree</dep>
   </deps>
   <filelist><dir name="/" baseinstalldir="XML">
     <file role="php" name="RSS.php" />
