@@ -20,7 +20,7 @@
 // $Id$
 //
 
-require_once 'XML_Parser/Parser.php';
+require_once 'XML/Parser.php';
 
 /**
  * RSS parser class.
