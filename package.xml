@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- do not use the "Type" attribute here, that one is only for
+     generated package.xml files -->
+<package>
+ <name>XML_RSS</name>
+ <summary>Parser for Resource Description Framework (RDF) Site Summary (RSS) documents.</summary>
+ <maintainer>
+  <user>MJ</user>
+  <name>Martin Jansen</name>
+  <email>mj@php.net</email>
+ </maintainer>
+ <release>
+  <version>0.9</version>
+  <date>2002-01-11</date>
+  <notes><![CDATA[
+  ]]>
+  </notes>
+ </release>
+ <filelist>
+  <dir name="/" baseinstalldir="XML">
+   <file role="php">RSS.php</file>
+    <dir name="tests">
+     <file role="php">01-rss-parse.phpt</file>
+     <file role="xml">test.rss</file>
+    </dir>
+   </dir>
+  </filelist>
+</package>
