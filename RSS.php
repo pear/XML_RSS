@@ -184,19 +184,21 @@ class XML_RSS extends XML_Parser
                                           $this->last);
         }
 
-        if ($element == 'ITEM') {
+        switch ($element) {
+        case 'ITEM' :
             $this->items[] = $this->item;
             $this->item = '';
-        }
+            break;
 
-        if ($element == 'IMAGE') {
+        case 'IMAGE' :
             $this->images[] = $this->image;
             $this->image = '';
-        }
+            break;
 
-        if ($element == 'TEXTINPUT') {
+        case 'TEXTINPUT' :
             $this->textinputs = $this->textinput;
             $this->textinput = '';
+            break;
         }
 
         $this->activeTag = '';
