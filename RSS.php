@@ -1,5 +1,5 @@
 <?php
-// vim: set expandtab tabstop=4 shiftwidth=4:
+// vim: set expandtab tabstop=4 shiftwidth=4 fdm=marker:
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
 // +----------------------------------------------------------------------+
@@ -20,7 +20,7 @@
 // $Id$
 //
 
-require_once "XML/Parser.php";
+require_once 'XML/Parser.php';
 
 /**
  * RSS parser class.
@@ -40,12 +40,12 @@ class XML_RSS extends XML_Parser
     /**
      * @var string
      */
-    var $insideTag = "";
+    var $insideTag = '';
 
     /**
      * @var string
      */
-    var $activeTag = "";
+    var $activeTag = '';
 
     /**
      * @var array
@@ -87,16 +87,16 @@ class XML_RSS extends XML_Parser
      * @param mixed File pointer or name of the RDF file.
      * @return void
      */
-    function XML_RSS($handle = "")
+    function XML_RSS($handle = '')
     {
         $this->XML_Parser();
 
         if (@is_resource($handle)) {
             $this->setInput($handle);
-        } elseif ($handle != "") {
+        } elseif ($handle != '') {
             $this->setInputFile($handle);
         } else {
-            $this->raiseError("No filename passed.");
+            $this->raiseError('No filename passed.');
         }
     }
 
@@ -115,14 +115,14 @@ class XML_RSS extends XML_Parser
     function startHandler($parser, $element, $attribs)
     {
         switch ($element) {
-            case "CHANNEL" :
-            case "ITEM" :
-            case "IMAGE" :
-            case "TEXTINPUT" :
+            case 'CHANNEL':
+            case 'ITEM':
+            case 'IMAGE':
+            case 'TEXTINPUT':
                 $this->insideTag = $element;
                 break;
 
-            default :
+            default:
                 $this->activeTag = $element;
         }
     }
@@ -146,27 +146,27 @@ class XML_RSS extends XML_Parser
     function endHandler($parser, $element)
     {
         if ($element == $this->insideTag) {
-            $this->insideTag = "";
-            $this->struct[] = array_merge(array("type" => strtolower($element)),
+            $this->insideTag = '';
+            $this->struct[] = array_merge(array('type' => strtolower($element)),
                                           $this->last);
         }
 
-        if ($element == "ITEM") {           
+        if ($element == 'ITEM') {
             $this->items[] = $this->item;
-            $this->item = "";
+            $this->item = '';
         }
 
-        if ($element == "IMAGE") {
+        if ($element == 'IMAGE') {
             $this->images[] = $this->image;
-            $this->image = "";
+            $this->image = '';
         }
 
-        if ($element == "TEXTINPUT") {
+        if ($element == 'TEXTINPUT') {
             $this->textinputs = $this->textinput;
-            $this->textinput = "";
+            $this->textinput = '';
         }
 
-        $this->activeTag = "";
+        $this->activeTag = '';
     }
 
     // }}}
@@ -185,49 +185,53 @@ class XML_RSS extends XML_Parser
         switch ($this->insideTag) {
 
             // Grab general channel information
-            case "CHANNEL" :            
+            case 'CHANNEL':
                 switch ($this->activeTag) {
-                    case "TITLE" :
-                    case "LINK" :
-                    case "DESCRIPTION" :
-                    case "IMAGE" :
-                    case "ITEMS" :
-                    case "TEXTINPUT" :
-                        $this->_add("channel", strtolower($this->activeTag), $cdata);
+                    case 'TITLE':
+                    case 'LINK':
+                    case 'DESCRIPTION':
+                    case 'IMAGE':
+                    case 'ITEMS':
+                    case 'TEXTINPUT':
+                        $this->_add('channel', strtolower($this->activeTag),
+                                    $cdata);
                         break;
                 }
                 break;
 
             // Grab item information
-            case "ITEM" :
+            case 'ITEM':
                 switch ($this->activeTag) {
-                    case "TITLE" :
-                    case "LINK" :
-                    case "DESCRIPTION" :
-                        $this->_add("item", strtolower($this->activeTag), $cdata);
+                    case 'TITLE':
+                    case 'LINK':
+                    case 'DESCRIPTION':
+                        $this->_add('item', strtolower($this->activeTag),
+                                    $cdata);
                         break;
                 }
                 break;
 
             // Grab image information
-            case "IMAGE" :
+            case 'IMAGE':
                 switch ($this->activeTag) {
-                    case "TITLE" :
-                    case "URL" :
-                    case "LINK" :
-                        $this->_add("image", strtolower($this->activeTag), $cdata);
+                    case 'TITLE':
+                    case 'URL':
+                    case 'LINK':
+                        $this->_add(image, strtolower($this->activeTag),
+                                    $cdata);
                         break;
                 }
                 break;
 
             // Grab image information
-            case "TEXTINPUT" :
+            case 'TEXTINPUT':
                 switch ($this->activeTag) {
-                    case "TITLE" :
-                    case "DESCRIPTION" :
-                    case "NAME" :
-                    case "LINK" :
-                        $this->_add("textinput", strtolower($this->activeTag), $cdata);
+                    case 'TITLE':
+                    case 'DESCRIPTION':
+                    case 'NAME':
+                    case 'LINK':
+                        $this->_add('textinput', strtolower($this->activeTag),
+                                    $cdata);
                         break;
                 }
                 break;
