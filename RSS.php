@@ -128,7 +128,7 @@ class XML_RSS extends XML_Parser
      * Constructor
      *
      * @access public
-     * @param mixed File pointer or name of the RDF file.
+     * @param mixed File pointer, name of the RDF file, or an RSS string.
      * @return void
      */
     function XML_RSS($handle = '')
@@ -136,9 +136,9 @@ class XML_RSS extends XML_Parser
         $this->XML_Parser();
 
         $this->setInput($handle);
-				
+
         if ($handle == '') {
-            $this->raiseError('No filename passed.');
+            $this->raiseError('No input passed.');
         }
     }
 

@@ -19,18 +19,19 @@ documents.
   </maintainer>
  </maintainers>
  <release>
-  <version>0.9.2</version>
-  <date>2003-03-13</date>
+  <version>0.10.0</version>
+  <date>2003-10-05</date>
   <state>stable</state>
   <notes>
-* Added support for the RSS modules Dublin Core Metadata and blogChannel
-* Big parts of the parsing engine have been rewritten
+* Allows string inputs (useful for cached feeds, e.g. from databases)
+* Fixes dependency on XML_Parser and removes erroneous dep on XML_Tree
   </notes>
   <deps>
-   <dep type="pkg" rel="has">XML_Tree</dep>
+   <dep type="pkg" rel="gt" version="1.0.1">XML_Parser</dep>
   </deps>
-  <filelist><dir name="/" baseinstalldir="XML">
-   <file role="php" name="RSS.php" />
+  <filelist>
+   <dir name="/" baseinstalldir="XML">
+    <file role="php" name="RSS.php" />
     <dir name="tests" role="test">
      <file name="01-parse.phpt" />
      <file name="test.rss" />
@@ -38,44 +39,30 @@ documents.
    </dir>
   </filelist>
  </release>
-
  <changelog>
-   <release>
-    <version>0.9</version>
-    <date>2002-01-11</date>
-    <state>stable</state>
-    <notes>This is the inital stable release.</notes>
-    <deps>
-     <dep type="pkg" rel="ge" version="1.0">XML_Tree</dep>
-    </deps>
-    <filelist><dir name="/" baseinstalldir="XML">
-     <file role="php" name="RSS.php" />
-      <dir name="tests" role="test">
-       <file name="01-parse.phpt" />
-       <file name="test.rss" />
-      </dir>
-     </dir>
-    </filelist>
-   </release>
-   <release>
-    <version>0.9.1</version>
-    <date>2002-04-11</date>
-    <state>stable</state>
-    <notes>
+  <release>
+   <version>0.9.2</version>
+   <date>2003-03-13</date>
+   <state>stable</state>
+   <notes>
+* Added support for the RSS modules Dublin Core Metadata and blogChannel
+* Big parts of the parsing engine have been rewritten
+   </notes>
+  </release>
+  <release>
+   <version>0.9</version>
+   <date>2002-01-11</date>
+   <state>stable</state>
+   <notes>This is the inital stable release.</notes>
+  </release>
+  <release>
+   <version>0.9.1</version>
+   <date>2002-04-11</date>
+   <state>stable</state>
+   <notes>
 This release fixes a small bug that caused warnings when using a
 verbose error mode in PHP.
-    </notes>
-    <deps>
-     <dep type="pkg" rel="ge" version="1.0">XML_Tree</dep>
-    </deps>
-    <filelist><dir name="/" baseinstalldir="XML">
-      <file role="php" name="RSS.php" />
-       <dir name="tests" role="test">
-        <file name="01-parse.phpt" />
-        <file name="test.rss" />
-       </dir>
-      </dir>
-     </filelist>
-    </release>
-  </changelog>
+   </notes>
+  </release>
+ </changelog>
 </package>
