@@ -20,7 +20,7 @@
 // $Id$
 //
 
-require_once 'XML/Parser.php';
+require_once 'XML_Parser/Parser.php';
 
 /**
  * RSS parser class.
@@ -217,7 +217,7 @@ class XML_RSS extends XML_Parser
                     case 'TITLE':
                     case 'URL':
                     case 'LINK':
-                        $this->_add(image, strtolower($this->activeTag),
+                        $this->_add('image', strtolower($this->activeTag),
                                     $cdata);
                         break;
                 }
