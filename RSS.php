@@ -190,7 +190,7 @@ class XML_RSS extends XML_Parser
      * End element handler for XML parser
      *
      * If the end of <item>, <channel>, <image> or <textinput>
-     * is reached, this function updates the structure array
+     * is reached, this method updates the structure array
      * $this->struct[] and adds the field "type" to this array,
      * that defines the type of the current field.
      *
@@ -313,7 +313,7 @@ class XML_RSS extends XML_Parser
     /**
      * Get general information about current channel
      *
-     * This function returns an array containing the information
+     * This method returns an array containing the information
      * that has been extracted from the <channel>-tag while parsing
      * the RSS file.
      *
@@ -331,7 +331,7 @@ class XML_RSS extends XML_Parser
     /**
      * Get items from RSS file
      *
-     * This function returns an array containing the set of items
+     * This method returns an array containing the set of items
      * that are provided by the RSS file.
      *
      * @access public
@@ -348,7 +348,7 @@ class XML_RSS extends XML_Parser
     /**
      * Get images from RSS file
      *
-     * This function returns an array containing the set of images
+     * This method returns an array containing the set of images
      * that are provided by the RSS file.
      *
      * @access public
