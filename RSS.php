@@ -144,7 +144,7 @@ class XML_RSS extends XML_Parser
      */
     function XML_RSS($handle = '', $srcenc = null, $tgtenc = null)
     {
-        if ($srcenc === null) {
+        if ($srcenc === null && $tgtenc === null) {
             $this->XML_Parser();
         } else {
             $this->XML_Parser($srcenc, 'event', $tgtenc);
