@@ -86,24 +86,29 @@ class XML_RSS extends XML_Parser
      * @var array
      */
     var $channelTags = array('TITLE', 'LINK', 'DESCRIPTION', 'IMAGE',
-                              'ITEMS', 'TEXTINPUT');
+                              'ITEMS', 'TEXTINPUT', 'LANGUAGE', 'COPYRIGHT',
+                              'MANAGINGEditor', 'WEBMASTER', 'PUBDATE', 'LASTBUILDDATE',
+                              'CATEGORY', 'GENERATOR', 'DOCS', 'CLOUD', 'TTL',
+                              'RATING');
 
     /**
      * @var array
      */
-    var $itemTags = array('TITLE', 'LINK', 'DESCRIPTION', 'PUBDATE');
+    var $itemTags = array('TITLE', 'LINK', 'DESCRIPTION', 'PUBDATE', 'AUTHOR', 'CATEGORY',
+                          'COMMENTS', 'ENCLOSURE', 'GUID', 'PUBDATE', 'SOURCE');
 
     /**
      * @var array
      */
-    var $imageTags = array('TITLE', 'URL', 'LINK');
+    var $imageTags = array('TITLE', 'URL', 'LINK', 'WIDTH', 'HEIGHT');
+
 
     var $textinputTags = array('TITLE', 'DESCRIPTION', 'NAME', 'LINK');
 
     /**
      * List of allowed module tags
      *
-     * Currently Dublin Core Metadata and the blogChannel RSS module
+     * Currently Dublin Core Metadata, blogChannel RSS module, and CreativeCommons
      * are supported.
      *
      * @var array
@@ -113,7 +118,8 @@ class XML_RSS extends XML_Parser
                             'DC:FORMAT', 'DC:IDENTIFIER', 'DC:SOURCE', 'DC:LANGUAGE',
                             'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS',
                             'BLOGCHANNEL:BLOGROLL', 'BLOGCHANNEL:MYSUBSCRIPTIONS',
-                            'BLOGCHANNEL:MYSUBSCRIPTIONS', 'BLOGCHANNEL:CHANGES');
+                            'BLOGCHANNEL:MYSUBSCRIPTIONS', 'BLOGCHANNEL:CHANGES',
+                            'CC:LICENSE');
 
     // }}}
     // {{{ Constructor
