@@ -138,14 +138,16 @@ class XML_RSS extends XML_Parser
      * @param mixed File pointer, name of the RSS file, or an RSS string.
      * @param string  Source charset encoding, use null (default) to use
      *                default encoding (ISO-8859-1)
+     * @param string  Target charset encoding, use null (default) to use
+     *                default encoding (ISO-8859-1)
      * @return void
      */
-    function XML_RSS($handle = '', $srcenc = null)
+    function XML_RSS($handle = '', $srcenc = null, $tgtenc = null)
     {
         if ($srcenc === null) {
             $this->XML_Parser();
         } else {
-            $this->XML_Parser($srcenc);
+            $this->XML_Parser($srcenc, 'event', $tgtenc);
         }
 
         $this->setInput($handle);
