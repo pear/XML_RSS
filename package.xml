@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE package SYSTEM "../package.dtd">
 <!-- do not use the "Type" attribute here, that one is only for
      generated package.xml files -->
-<package>
+<package version="1.0">
  <name>XML_RSS</name>
  <summary>Parser for Resource Description Framework (RDF) Site Summary (RSS) documents.</summary>
  <description></description>
