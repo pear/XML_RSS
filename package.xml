@@ -4,9 +4,12 @@
      generated package.xml files -->
 <package version="1.0">
  <name>XML_RSS</name>
- <summary>Parser for Resource Description Framework (RDF) Site Summary (RSS) documents.</summary>
- <description></description>
- <license>PHP 2.02</license>
+ <summary>RSS parser</summary>
+ <description>
+Parser for Resource Description Framework (RDF) Site Summary (RSS)
+documents. 
+ </description>
+ <license>PHP License</license>
  <maintainers>
   <maintainer>
    <user>MJ</user>
@@ -19,9 +22,7 @@
   <version>0.9</version>
   <date>2002-01-11</date>
   <state>stable</state>
-  <notes><![CDATA[
-  ]]>
-  </notes>
+  <notes>This is the inital stable release.</notes>
   <deps>
    <dep type="pkg" rel="ge" version="1.0">XML_Tree</dep>
   </deps>
