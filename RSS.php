@@ -43,6 +43,11 @@ class XML_RSS extends XML_Parser
     var $insideTag = '';
 
     /**
+     * @var array
+     */
+    var $insideTagStack = array();
+
+    /**
      * @var string
      */
     var $activeTag = '';
@@ -162,6 +167,7 @@ class XML_RSS extends XML_Parser
             case 'IMAGE':
             case 'TEXTINPUT':
                 $this->insideTag = $element;
+                array_push($this->insideTagStack, $element);
                 break;
 
             default:
@@ -188,7 +194,9 @@ class XML_RSS extends XML_Parser
     function endHandler($parser, $element)
     {
         if ($element == $this->insideTag) {
-            $this->insideTag = '';
+            array_pop($this->insideTagStack);
+            $this->insideTag = end($this->insideTagStack);
+
             $this->struct[] = array_merge(array('type' => strtolower($element)),
                                           $this->last);
         }
