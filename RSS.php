@@ -103,15 +103,17 @@ class XML_RSS extends XML_Parser
     /**
      * List of allowed module tags
      *
-     * Currently only Dublin Core Metadata tags are supported
-     * (http://www.dublincore.org/documents/dces/)
+     * Currently Dublin Core Metadata and the blogChannel RSS module
+     * are supported.
      *
      * @var array
      */
     var $moduleTags = array('DC:TITLE', 'DC:CREATOR', 'DC:SUBJECT', 'DC:DESCRIPTION',
                             'DC:PUBLISHER', 'DC:CONTRIBUTOR', 'DC:DATE', 'DC:TYPE',
                             'DC:FORMAT', 'DC:IDENTIFIER', 'DC:SOURCE', 'DC:LANGUAGE',
-                            'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS');
+                            'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS',
+                            'BLOGCHANNEL:BLOGROLL', 'BLOGCHANNEL:MYSUBSCRIPTIONS',
+                            'BLOGCHANNEL:MYSUBSCRIPTIONS', 'BLOGCHANNEL:CHANGES');
 
     // }}}
     // {{{ Constructor
