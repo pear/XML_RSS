@@ -35,4 +35,25 @@ documents.
     </dir>
    </filelist>
  </release>
+ <release>
+  <version>0.9.1</version>
+  <date>2002-04-11</date>
+  <state>stable</state>
+  <notes>
+This release fixes a small bug that caused warnings when using a
+verbose error mode in PHP.
+  </notes>
+  <deps>
+   <dep type="pkg" rel="ge" version="1.0">XML_Tree</dep>
+  </deps>
+  <filelist><dir name="/" baseinstalldir="XML">
+    <file role="php" name="RSS.php" />
+     <dir name="tests" role="test">
+      <file name="01-parse.phpt" />
+      <file name="test.rss" />
+     </dir>
+    </dir>
+   </filelist>
+ </release>
+
 </package>
