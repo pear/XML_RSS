@@ -148,15 +148,15 @@ class XML_RSS extends XML_Parser
     function startHandler($parser, $element, $attribs)
     {
         switch ($element) {
-            case 'CHANNEL':
-            case 'ITEM':
-            case 'IMAGE':
-            case 'TEXTINPUT':
-                $this->insideTag = $element;
-                break;
+        case 'CHANNEL':
+        case 'ITEM':
+        case 'IMAGE':
+        case 'TEXTINPUT':
+            $this->insideTag = $element;
+            break;
 
-            default:
-                $this->activeTag = $element;
+        default:
+            $this->activeTag = $element;
         }
     }
 
@@ -178,13 +178,12 @@ class XML_RSS extends XML_Parser
      */
     function endHandler($parser, $element)
     {
-        if ($element == $this->insideTag) {
+        switch ($element) {
+        case $this->insideTag :
             $this->insideTag = '';
             $this->struct[] = array_merge(array('type' => strtolower($element)),
                                           $this->last);
-        }
 
-        switch ($element) {
         case 'ITEM' :
             $this->items[] = $this->item;
             $this->item = '';
