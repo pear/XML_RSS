@@ -101,16 +101,17 @@ class XML_RSS extends XML_Parser
     var $textinputTags = array('TITLE', 'DESCRIPTION', 'NAME', 'LINK');
 
     /**
-     * List of allowed Dublin Core Metadata tags
+     * List of allowed module tags
      *
-     * Detailed reference: http://www.dublincore.org/documents/dces/
+     * Currently only Dublin Core Metadata tags are supported
+     * (http://www.dublincore.org/documents/dces/)
      *
      * @var array
      */
-    var $dcTags = array('DC:TITLE', 'DC:CREATOR', 'DC:SUBJECT', 'DC:DESCRIPTION',
-                         'DC:PUBLISHER', 'DC:CONTRIBUTOR', 'DC:DATE', 'DC:TYPE',
-                         'DC:FORMAT', 'DC:IDENTIFIER', 'DC:SOURCE', 'DC:LANGUAGE',
-                         'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS');
+    var $moduleTags = array('DC:TITLE', 'DC:CREATOR', 'DC:SUBJECT', 'DC:DESCRIPTION',
+                            'DC:PUBLISHER', 'DC:CONTRIBUTOR', 'DC:DATE', 'DC:TYPE',
+                            'DC:FORMAT', 'DC:IDENTIFIER', 'DC:SOURCE', 'DC:LANGUAGE',
+                            'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS');
 
     // }}}
     // {{{ Constructor
@@ -222,7 +223,7 @@ class XML_RSS extends XML_Parser
             $var = $this->{$tagName . 'Tags'};
 
             if (in_array($this->activeTag, $var) ||
-                in_array($this->activeTag, $this->dcTags)) {
+                in_array($this->activeTag, $this->moduleTags)) {
                 $this->_add($tagName, strtolower($this->activeTag),
                             $cdata);
             }
