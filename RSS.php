@@ -113,8 +113,8 @@ class XML_RSS extends XML_Parser
     /**
      * List of allowed module tags
      *
-     * Currently Dublin Core Metadata, blogChannel RSS module, and CreativeCommons
-     * are supported.
+     * Currently Dublin Core Metadata, blogChannel RSS module, CreativeCommons,
+     * Content and Syndication are supported.
      *
      * @var array
      */
@@ -124,7 +124,9 @@ class XML_RSS extends XML_Parser
                             'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS',
                             'BLOGCHANNEL:BLOGROLL', 'BLOGCHANNEL:MYSUBSCRIPTIONS',
                             'BLOGCHANNEL:MYSUBSCRIPTIONS', 'BLOGCHANNEL:CHANGES',
-                            'CC:LICENSE');
+                            'CC:LICENSE', 'CONTENT:ENCODED', 
+                            'SY:UPDATEPERIOD', 'SY:UPDATEFREQUENCY', 'SY:UPDATEBASE', 
+                            );
 
     // }}}
     // {{{ Constructor
@@ -134,11 +136,17 @@ class XML_RSS extends XML_Parser
      *
      * @access public
      * @param mixed File pointer, name of the RSS file, or an RSS string.
+     * @param string  Source charset encoding, use null (default) to use
+     *                default encoding (ISO-8859-1)
      * @return void
      */
-    function XML_RSS($handle = '')
+    function XML_RSS($handle = '', $srcenc = null)
     {
-        $this->XML_Parser();
+        if ($srcenc === null) {
+            $this->XML_Parser();
+        } else {
+            $this->XML_Parser($srcenc);
+        }
 
         $this->setInput($handle);
 
