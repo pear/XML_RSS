@@ -20,7 +20,7 @@
   <dir name="/" baseinstalldir="XML">
    <file role="php">RSS.php</file>
     <dir name="tests">
-     <file role="php">01-rss-parse.phpt</file>
+     <file role="php">01-parse.phpt</file>
      <file role="xml">test.rss</file>
     </dir>
    </dir>
