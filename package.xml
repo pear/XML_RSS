@@ -24,8 +24,9 @@ documents.
   <state>stable</state>
   <notes>
 * Allows string inputs (useful for cached feeds, e.g. from databases)
-* Fixes dependency on XML_Parser and removes erroneous dep on XML_Tree
+* Fixes dependency on XML_Parser and removes erroneous dependency on XML_Tree
 * Fixed bug #557
+* Fixed bug #2310
   </notes>
   <deps>
    <dep type="pkg" rel="gt" version="1.0.1">XML_Parser</dep>
