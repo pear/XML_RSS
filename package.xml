@@ -30,13 +30,13 @@ documents.
    <dep type="pkg" rel="has">XML_Tree</dep>
   </deps>
   <filelist><dir name="/" baseinstalldir="XML">
-    <file role="php" name="RSS.php" />
-     <dir name="tests" role="test">
-      <file name="01-parse.phpt" />
-      <file name="test.rss" />
-     </dir>
+   <file role="php" name="RSS.php" />
+    <dir name="tests" role="test">
+     <file name="01-parse.phpt" />
+     <file name="test.rss" />
     </dir>
-   </filelist>
+   </dir>
+  </filelist>
  </release>
 
  <changelog>
