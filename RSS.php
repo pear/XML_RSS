@@ -106,7 +106,7 @@ class XML_RSS extends XML_Parser
      */
     var $itemTags = array('TITLE', 'LINK', 'DESCRIPTION', 'PUBDATE', 'AUTHOR', 'CATEGORY',
                           'COMMENTS', 'ENCLOSURE', 'GUID', 'PUBDATE', 'SOURCE',
-                          'CONTENT:ENCODED', 'ENCLOSURE');
+                          'CONTENT:ENCODED');
 
     /**
      * @var array
