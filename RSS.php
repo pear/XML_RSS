@@ -85,6 +85,11 @@ class XML_RSS extends XML_Parser
     /**
      * @var array
      */
+    var $attribs;
+
+    /**
+     * @var array
+     */
     var $parentTags = array('CHANNEL', 'ITEM', 'IMAGE', 'TEXTINPUT');
 
     /**
@@ -100,7 +105,8 @@ class XML_RSS extends XML_Parser
      * @var array
      */
     var $itemTags = array('TITLE', 'LINK', 'DESCRIPTION', 'PUBDATE', 'AUTHOR', 'CATEGORY',
-                          'COMMENTS', 'ENCLOSURE', 'GUID', 'PUBDATE', 'SOURCE');
+                          'COMMENTS', 'ENCLOSURE', 'GUID', 'PUBDATE', 'SOURCE',
+                          'CONTENT:ENCODED', 'ENCLOSURE');
 
     /**
      * @var array
@@ -184,6 +190,10 @@ class XML_RSS extends XML_Parser
                 array_push($this->insideTagStack, $element);
                 break;
 
+            case 'ENCLOSURE' :
+                $this->attribs = $attribs;
+                break;
+
             default:
                 $this->activeTag = $element;
         }
@@ -232,6 +242,15 @@ class XML_RSS extends XML_Parser
         if ($element == 'TEXTINPUT') {
             $this->textinputs = $this->textinput;
             $this->textinput = '';
+        }
+
+        if ($element == 'ENCLOSURE') {
+            if (!isset($this->item['enclosures'])) {
+                $this->item['enclosures'] = array();
+            }
+
+            $this->item['enclosures'][] = array_change_key_case($this->attribs, CASE_LOWER);
+            $this->attribs = array();
         }
 
         $this->activeTag = '';
