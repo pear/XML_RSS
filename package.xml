@@ -19,14 +19,21 @@ documents.
   </maintainer>
  </maintainers>
  <release>
-  <version>x.x.x</version>
-  <date>2004-xx-xx</date>
-  <state>stable</state>
+  <version>0.9.9</version>
+  <date>2005-10-22</date>
+  <state>beta</state>
   <notes>
+This release is a beta release in preparation for the upcoming stable
+release of version 1.0.0.
+
 * Allows string inputs (useful for cached feeds, e.g. from databases)
 * Fixes dependency on XML_Parser and removes erroneous dependency on XML_Tree
 * Fixed bug #557
+* Fixed bug #2045
 * Fixed bug #2310
+* Fixed bug #2782
+* Fixed bug #3871
+* Added unit tests
   </notes>
   <deps>
    <dep type="pkg" rel="gt" version="1.0.1">XML_Parser</dep>
