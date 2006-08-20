@@ -134,6 +134,11 @@ class XML_RSS extends XML_Parser
                             'SY:UPDATEPERIOD', 'SY:UPDATEFREQUENCY', 'SY:UPDATEBASE', 
                             );
 
+    /**
+     * @var array
+     */
+    var $last = array();
+
     // }}}
     // {{{ Constructor
 
