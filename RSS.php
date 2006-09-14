@@ -76,7 +76,7 @@ class XML_RSS extends XML_Parser
      * @var array
      */
     var $textinput = array();
-    
+
     /**
      * @var array
      */
@@ -119,8 +119,17 @@ class XML_RSS extends XML_Parser
     /**
      * List of allowed module tags
      *
-     * Currently Dublin Core Metadata, blogChannel RSS module, CreativeCommons,
-     * Content and Syndication are supported.
+     * Currently supported:
+     *
+     *   Dublin Core Metadata
+     *   blogChannel RSS module
+     *   CreativeCommons
+     *   Content
+     *   Syndication
+     *   Trackback
+     *   GeoCoding
+     *   Media
+     *   iTunes
      *
      * @var array
      */
@@ -129,9 +138,19 @@ class XML_RSS extends XML_Parser
                             'DC:FORMAT', 'DC:IDENTIFIER', 'DC:SOURCE', 'DC:LANGUAGE',
                             'DC:RELATION', 'DC:COVERAGE', 'DC:RIGHTS',
                             'BLOGCHANNEL:BLOGROLL', 'BLOGCHANNEL:MYSUBSCRIPTIONS',
-                            'BLOGCHANNEL:MYSUBSCRIPTIONS', 'BLOGCHANNEL:CHANGES',
-                            'CC:LICENSE', 'CONTENT:ENCODED', 
-                            'SY:UPDATEPERIOD', 'SY:UPDATEFREQUENCY', 'SY:UPDATEBASE', 
+                            'BLOGCHANNEL:BLINK', 'BLOGCHANNEL:CHANGES',
+                            'CREATIVECOMMONS:LICENSE', 'CC:LICENSE', 'CONTENT:ENCODED',
+                            'SY:UPDATEPERIOD', 'SY:UPDATEFREQUENCY', 'SY:UPDATEBASE',
+                            'TRACKBACK:PING', 'GEO:LAT', 'GEO:LONG',
+                            'MEDIA:GROUP', 'MEDIA:CONTENT', 'MEDIA:ADULT',
+                            'MEDIA:RATING', 'MEDIA:TITLE', 'MEDIA:DESCRIPTION',
+                            'MEDIA:KEYWORDS', 'MEDIA:THUMBNAIL', 'MEDIA:CATEGORY',
+                            'MEDIA:HASH', 'MEDIA:PLAYER', 'MEDIA:CREDIT',
+                            'MEDIA:COPYRIGHT', 'MEDIA:TEXT', 'MEDIA:RESTRICTION',
+                            'ITUNES:AUTHOR', 'ITUNES:BLOCK', 'ITUNES:CATEGORY',
+                            'ITUNES:DURATION', 'ITUNES:EXPLICIT', 'ITUNES:IMAGE',
+                            'ITUNES:KEYWORDS', 'ITUNES:NEW-FEED-URL', 'ITUNES:OWNER',
+                            'ITUNES:PUBDATE', 'ITUNES:SUBTITLE', 'ITUNES:SUMMARY'
                             );
 
     /**
@@ -283,7 +302,7 @@ class XML_RSS extends XML_Parser
                 $this->_add($tagName, strtolower($this->activeTag),
                             $cdata);
             }
-            
+
         }
     }
 
