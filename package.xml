@@ -41,13 +41,15 @@ release of version 1.0.0.
    <dep type="pkg" rel="gt" version="1.0.1">XML_Parser</dep>
   </deps>
   <filelist>
-   <dir name="/" baseinstalldir="XML">
-    <file role="php" name="RSS.php" />
-    <dir name="tests" role="test">
-     <file name="XML_RSS_Infrastructure_Test.php" />
-     <file name="XML_RSS_Parsing_Test.php" />
-     <file name="test.rss" />
-    </dir>
+   <dir name="/">
+     <dir name="XML">
+       <file role="php" name="RSS.php" />
+     </dir>
+     <dir name="tests" role="test">
+       <file name="XML_RSS_Infrastructure_Test.php" />
+       <file name="XML_RSS_Parsing_Test.php" />
+       <file name="test.rss" />
+     </dir>
    </dir>
   </filelist>
  </release>
