@@ -14,9 +14,11 @@
 // $Id$
 //
 
-require_once "PHPUnit.php";
-require_once "PHPUnit/TestCase.php";
-require_once "PHPUnit/TestSuite.php";
+if (!defined('PHPUnit_MAIN_METHOD')) {
+    define('PHPUnit_MAIN_METHOD', 'XML_RSS_Infrastructure_Test::main');
+}
+
+require_once "PHPUnit/Framework.php";
 require_once "XML/RSS.php";
 
 /**
@@ -30,7 +32,15 @@ require_once "XML/RSS.php";
  * @extends PHPUnit_TestCase
  * @version $Id$
  */
-class XML_RSS_Infrastructure_Test extends PHPUnit_TestCase {
+class XML_RSS_Infrastructure_Test extends PHPUnit_Framework_TestCase
+{
+    public static function main()
+    {
+        require_once 'PHPUnit/TextUI/TestRunner.php';
+        PHPUnit_TextUI_TestRunner::run(
+            new PHPUnit_Framework_TestSuite('XML_RSS_Infrastructure_Test')
+        );
+    }
 
     /**
      * Test case for making sure that XML_RSS extends from XML_Parser
@@ -55,6 +65,7 @@ class XML_RSS_Infrastructure_Test extends PHPUnit_TestCase {
     }
 }
 
-$suite = new PHPUnit_TestSuite("XML_RSS_Infrastructure_Test");
-$result = PHPUnit::run($suite);
-echo $result->toString();
+if (PHPUnit_MAIN_METHOD == 'XML_RSS_Infrastructure_Test::main') {
+    XML_RSS_Infrastructure_Test::main();
+}
+?>
