@@ -38,7 +38,9 @@ http://pear.php.net/dtd/package-2.0.xsd"
  <license uri="http://www.php.net/license">PHP License</license>
  <notes>
 QA release:
-- Fix bug 17007: Wrong PHP license version [cweiske]
+- Fix bug #11815: XML_Parser must be installed manually [doconnor]
+- Fix bug #15268: tiny bug, not critical, a typo in RSS.php [doconnor]
+- Fix bug #17007: Wrong PHP license version [cweiske]
 - Port unit tests to phpunit 3
 - Fix Coding Standards
 - Convert to package.xml v2
@@ -187,7 +189,9 @@ release of version 1.0.0.
    <license uri="http://www.php.net/license">PHP License</license>
    <notes>
 QA release:
-- Fix bug 17007: Wrong PHP license version [cweiske]
+- Fix bug #11815: XML_Parser must be installed manually [doconnor]
+- Fix bug #15268: tiny bug, not critical, a typo in RSS.php [doconnor]
+- Fix bug #17007: Wrong PHP license version [cweiske]
 - Port unit tests to phpunit 3
 - Fix Coding Standards
 - Convert to package.xml v2
