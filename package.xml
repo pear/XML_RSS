@@ -17,10 +17,10 @@
   <email>mj@php.net</email>
   <active>no</active>
  </lead>
- <date>2010-10-25</date>
- <time>22:42:13</time>
+ <date>2011-05-01</date>
+ <time>17:42:13</time>
  <version>
-  <release>1.0.1</release>
+  <release>1.0.2</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -29,15 +29,15 @@
  </stability>
  <license uri="http://www.php.net/license">PHP License</license>
  <notes>
-Automatically built QA release
-Req #10404 Please add a timestamp in item array - cweiske
+Bug #17315:	categories are pasted together
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="b4eec2d26e1417690310c351b602e8b3" name="tests/test.rss" role="test" />
+   <file baseinstalldir="/" md5sum="c6d95b1b607097fee78a03b8bbdd383a" name="tests/test.rss" role="test" />
+   <file baseinstalldir="/" md5sum="39ad264a147763ca8917babc57348033" name="tests/AllTests.php" role="test" />
    <file baseinstalldir="/" md5sum="6b7a5e2c272278bd2836cd3c933e7b4e" name="tests/XML_RSS_Infrastructure_Test.php" role="test" />
-   <file baseinstalldir="/" md5sum="541f2511b3be180ce6f89b7615239efd" name="tests/XML_RSS_Parsing_Test.php" role="test" />
-   <file baseinstalldir="/" md5sum="d9fc10b6970c4fc6ad7ac14d49b17382" name="XML/RSS.php" role="php" />
+   <file baseinstalldir="/" md5sum="3f1ac987bbcf71f2b3cfa7fc854b4ad8" name="tests/XML_RSS_Parsing_Test.php" role="test" />
+   <file baseinstalldir="/" md5sum="1736c27b7af10b3df1e140429af58bb0" name="XML/RSS.php" role="php" />
   </dir>
  </contents>
  <dependencies>

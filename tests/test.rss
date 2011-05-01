@@ -19,21 +19,28 @@
 <item>
  <title>PHP homepage</title>
  <link>http://php.net/</link>
+ <category><![CDATA[php]]></category>
 </item>
 
 <item>
  <title>PEAR homepage</title>
  <link>http://pear.php.net/</link>
+ <category><![CDATA[php]]></category>
+ <category><![CDATA[pear]]></category>
 </item>
 
 <item>
  <title>PHP-GTK homepage</title>
  <link>http://gtk.php.net/</link>
+ <category><![CDATA[php]]></category>
+ <category><![CDATA[gtk]]></category>
 </item>
 
 <item>
  <title>PHP QA homepage</title>
  <link>http://qa.php.net/</link>
+ <category><![CDATA[php]]></category>
+ <category><![CDATA[qa]]></category>
 </item>
 
 <textinput>
