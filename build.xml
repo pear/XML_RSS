@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="XML_Util2" default="build" basedir=".">
+<project name="XML_RSS" default="build" basedir=".">
 	<condition property="phpunit.bin" value="phpunit.bat" else="phpunit">
         <os family="windows"/>
     </condition>
