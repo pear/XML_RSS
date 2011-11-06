@@ -56,10 +56,10 @@ class XML_RSS_Infrastructure_Test extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/2310/
      */
     function testBug2310() {
-        $rss =& new XML_RSS("", null, "utf-8");
+        $rss = new XML_RSS("", null, "utf-8");
         $this->assertEquals($rss->tgtenc, "utf-8");
 
-        $rss =& new XML_RSS("", "utf-8", "iso-8859-1");
+        $rss = new XML_RSS("", "utf-8", "iso-8859-1");
         $this->assertEquals($rss->srcenc, "utf-8");
         $this->assertEquals($rss->tgtenc, "iso-8859-1");
     }

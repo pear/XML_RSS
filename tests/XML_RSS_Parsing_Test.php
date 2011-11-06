@@ -48,7 +48,7 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
         $keys = array_keys($result);
         $i = 0;
 
-        $r =& new XML_RSS(dirname(__FILE__) . '/test.rss');
+        $r = new XML_RSS(dirname(__FILE__) . '/test.rss');
         $r->parse();
 
         $this->assertEquals(count($r->getItems()), 4);
@@ -62,7 +62,7 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
 
     function testGetStructure()
     {
-        $r =& new XML_RSS(dirname(__FILE__) . '/test.rss');
+        $r = new XML_RSS(dirname(__FILE__) . '/test.rss');
         $r->parse();
 
 		$expected = 'a:7:{i:0;a:4:{s:4:"type";s:7:"channel";s:5:"title";s:4:"Test";s:4:"link";s:20:"http://pear.php.net/";s:11:"description";s:34:"This is a test channel for XML_RSS";}i:1;a:4:{s:4:"type";s:5:"image";s:5:"title";s:4:"PEAR";s:3:"url";s:38:"http://pear.php.net/gifs/pearsmall.gif";s:4:"link";s:20:"http://pear.php.net/";}i:2;a:4:{s:4:"type";s:4:"item";s:5:"title";s:12:"PHP homepage";s:4:"link";s:15:"http://php.net/";s:8:"category";a:1:{i:0;s:3:"php";}}i:3;a:4:{s:4:"type";s:4:"item";s:5:"title";s:13:"PEAR homepage";s:4:"link";s:20:"http://pear.php.net/";s:8:"category";a:2:{i:0;s:3:"php";i:1;s:4:"pear";}}i:4;a:4:{s:4:"type";s:4:"item";s:5:"title";s:16:"PHP-GTK homepage";s:4:"link";s:19:"http://gtk.php.net/";s:8:"category";a:2:{i:0;s:3:"php";i:1;s:3:"gtk";}}i:5;a:4:{s:4:"type";s:4:"item";s:5:"title";s:15:"PHP QA homepage";s:4:"link";s:18:"http://qa.php.net/";s:8:"category";a:2:{i:0;s:3:"php";i:1;s:2:"qa";}}i:6;a:5:{s:4:"type";s:9:"textinput";s:5:"title";s:15:"Search Slashdot";s:11:"description";s:23:"Search Slashdot stories";s:4:"name";s:5:"query";s:4:"link";s:29:"http://slashdot.org/search.pl";}}';
@@ -74,7 +74,7 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
     function testGetStructureFromString()
     {
         $rss = file_get_contents(dirname(__FILE__) . '/test.rss');
-        $r =& new XML_RSS($rss);
+        $r = new XML_RSS($rss);
         $r->parse();
 
 		$expected = 'a:7:{i:0;a:4:{s:4:"type";s:7:"channel";s:5:"title";s:4:"Test";s:4:"link";s:20:"http://pear.php.net/";s:11:"description";s:34:"This is a test channel for XML_RSS";}i:1;a:4:{s:4:"type";s:5:"image";s:5:"title";s:4:"PEAR";s:3:"url";s:38:"http://pear.php.net/gifs/pearsmall.gif";s:4:"link";s:20:"http://pear.php.net/";}i:2;a:4:{s:4:"type";s:4:"item";s:5:"title";s:12:"PHP homepage";s:4:"link";s:15:"http://php.net/";s:8:"category";a:1:{i:0;s:3:"php";}}i:3;a:4:{s:4:"type";s:4:"item";s:5:"title";s:13:"PEAR homepage";s:4:"link";s:20:"http://pear.php.net/";s:8:"category";a:2:{i:0;s:3:"php";i:1;s:4:"pear";}}i:4;a:4:{s:4:"type";s:4:"item";s:5:"title";s:16:"PHP-GTK homepage";s:4:"link";s:19:"http://gtk.php.net/";s:8:"category";a:2:{i:0;s:3:"php";i:1;s:3:"gtk";}}i:5;a:4:{s:4:"type";s:4:"item";s:5:"title";s:15:"PHP QA homepage";s:4:"link";s:18:"http://qa.php.net/";s:8:"category";a:2:{i:0;s:3:"php";i:1;s:2:"qa";}}i:6;a:5:{s:4:"type";s:9:"textinput";s:5:"title";s:15:"Search Slashdot";s:11:"description";s:23:"Search Slashdot stories";s:4:"name";s:5:"query";s:4:"link";s:29:"http://slashdot.org/search.pl";}}';
@@ -85,7 +85,7 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
 
     function testGetChannelInfo()
     {
-        $r =& new XML_RSS(dirname(__FILE__) . '/test.rss');
+        $r = new XML_RSS(dirname(__FILE__) . '/test.rss');
         $r->parse();
 
         $expected = array(
@@ -101,7 +101,7 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
 
     function testGetItems()
     {
-        $r =& new XML_RSS(dirname(__FILE__) . '/test.rss');
+        $r = new XML_RSS(dirname(__FILE__) . '/test.rss');
         $r->parse();
 
         $expected = array();
@@ -133,7 +133,7 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
 
     function testGetImages()
     {
-        $r =& new XML_RSS(dirname(__FILE__) . '/test.rss');
+        $r = new XML_RSS(dirname(__FILE__) . '/test.rss');
         $r->parse();
 
         $expected = array();
@@ -150,7 +150,7 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
 
     function testGetTextinputs()
     {
-        $r =& new XML_RSS(dirname(__FILE__) . '/test.rss');
+        $r = new XML_RSS(dirname(__FILE__) . '/test.rss');
         $r->parse();
 
         $expected = array(
