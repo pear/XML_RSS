@@ -46,7 +46,7 @@ class XML_RSS_Infrastructure_Test extends PHPUnit_Framework_TestCase
      * Test case for making sure that XML_RSS extends from XML_Parser
      */
     function testIsXML_Parser() {
-        $rss =& new XML_RSS();
+        $rss = new XML_RSS();
         $this->assertTrue(is_a($rss, "XML_Parser"));
     }
 
