@@ -18,7 +18,7 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
     define('PHPUnit_MAIN_METHOD', 'XML_RSS_Parsing_Test::main');
 }
 
-require_once "PHPUnit/Framework.php";
+require_once "PHPUnit/Framework/TestCase.php";
 require_once "XML/RSS.php";
 
 /**
