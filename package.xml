@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>XML_RSS</name>
  <channel>pear.php.net</channel>
  <summary>RSS parser</summary>
@@ -17,10 +17,10 @@
   <email>mj@php.net</email>
   <active>no</active>
  </lead>
- <date>2011-05-01</date>
- <time>17:42:13</time>
+ <date>2011-11-06</date>
+ <time>22:54:35</time>
  <version>
-  <release>1.0.2</release>
+  <release>1.0.3</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -29,15 +29,19 @@
  </stability>
  <license uri="http://www.php.net/license">PHP License</license>
  <notes>
-Bug #17315:	categories are pasted together
+QA release
+PHPUnit 3.6
+Remove deprecated eregi
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="c6d95b1b607097fee78a03b8bbdd383a" name="tests/test.rss" role="test" />
-   <file baseinstalldir="/" md5sum="39ad264a147763ca8917babc57348033" name="tests/AllTests.php" role="test" />
-   <file baseinstalldir="/" md5sum="6b7a5e2c272278bd2836cd3c933e7b4e" name="tests/XML_RSS_Infrastructure_Test.php" role="test" />
-   <file baseinstalldir="/" md5sum="3f1ac987bbcf71f2b3cfa7fc854b4ad8" name="tests/XML_RSS_Parsing_Test.php" role="test" />
-   <file baseinstalldir="/" md5sum="1736c27b7af10b3df1e140429af58bb0" name="XML/RSS.php" role="php" />
+   <file baseinstalldir="/" md5sum="1d26320510d7d63b0996b511dd2c170a" name="tests/XML_RSS_Infrastructure_Test.php" role="test" />
+   <file baseinstalldir="/" md5sum="658508434a83cb836c046b6bf9e32285" name="tests/XML_RSS_Infrastructure_Test.php~" role="test" />
+   <file baseinstalldir="/" md5sum="b50ae4396985deb80efc3ccb90522c71" name="tests/XML_RSS_Parsing_Test.php" role="test" />
+   <file baseinstalldir="/" md5sum="a702e17f7e3504e0d97f2d69a8f6d76b" name="tests/XML_RSS_Parsing_Test.php~" role="test" />
+   <file baseinstalldir="/" md5sum="13b1df7691d53f1453c976d5ffca4627" name="XML/RSS.php" role="php" />
+   <file baseinstalldir="/" md5sum="a11721277088bc07ff2e0ca9311244e9" name="README" role="data" />
   </dir>
  </contents>
  <dependencies>
@@ -55,6 +59,13 @@ Bug #17315:	categories are pasted together
     <exclude>1.0.1</exclude>
    </package>
   </required>
+  <optional>
+   <package>
+    <name>PHPUnit</name>
+    <channel>pear.phpunit.de</channel>
+    <min>3.6.0</min>
+   </package>
+  </optional>
  </dependencies>
  <phprelease />
  <changelog>
@@ -186,6 +197,23 @@ QA release:
    <notes>
 Automatically built QA release
 Req #10404 Please add a timestamp in item array - cweiske
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.3</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-11-06</date>
+   <license uri="http://www.php.net/license">PHP License</license>
+   <notes>
+QA release
+PHPUnit 3.6
+Remove deprecated eregi
    </notes>
   </release>
  </changelog>
