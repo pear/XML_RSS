@@ -17,13 +17,16 @@
 		<delete dir="${basedir}/build/pdepend"/>
 		<delete dir="${basedir}/build"/>
 
-		<mkdir dir="${basedir}/lib/" />
 		<mkdir dir="${basedir}/build"/>
 		<mkdir dir="${basedir}/build/api"/>
 		<mkdir dir="${basedir}/build/code-browser"/>
 		<mkdir dir="${basedir}/build/coverage"/>
 		<mkdir dir="${basedir}/build/logs"/>
 		<mkdir dir="${basedir}/build/pdepend"/>
+
+        <exec dir="${basedir}" executable="svn">
+            <arg line="export https://svn.php.net/repository/pear/packages/XML_Parser/trunk lib/XML" />
+        </exec>
 	</target>
 
 	<target name="phpunit">
