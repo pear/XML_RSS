@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "XML_RSS": "./"
+            "XML": "./"
         }
     },
     "description": "More info available on: http://pear.php.net/package/XML_RSS",
@@ -28,7 +28,8 @@
     },
     "type": "library",
     "require": {
-        "pear/pear_exception": "*"
+        "pear/pear_exception": "*",
+        "pear/xml_parser": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
