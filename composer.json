@@ -1,0 +1,36 @@
+{
+    "authors": [
+        {
+            "email": "clay@killersoft.com",
+            "name": "Clay Loveless",
+            "role": "Lead"
+        },
+        {
+            "email": "mj@php.net",
+            "name": "Martin Jansen",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "XML_RSS": "./"
+        }
+    },
+    "description": "More info available on: http://pear.php.net/package/XML_RSS",
+    "include-path": [
+        "./"
+    ],
+    "license": "PHP License",
+    "name": "pear/xml_rss",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=XML_RSS",
+        "source": "https://github.com/pear/XML_RSS"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
