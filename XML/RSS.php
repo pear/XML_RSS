@@ -174,12 +174,12 @@ class XML_RSS extends XML_Parser
      * @return void
      * @access public
      */
-    function XML_RSS($handle = '', $srcenc = null, $tgtenc = null)
+    function __construct($handle = '', $srcenc = null, $tgtenc = null)
     {
         if ($srcenc === null && $tgtenc === null) {
-            $this->XML_Parser();
+            parent::__construct();
         } else {
-            $this->XML_Parser($srcenc, 'event', $tgtenc);
+            parent::__construct($srcenc, 'event', $tgtenc);
         }
 
         $this->setInput($handle);
