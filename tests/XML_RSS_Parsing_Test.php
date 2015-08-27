@@ -1,24 +1,28 @@
 <?php
-// +------------------------------------------------------------------------+
-// | PEAR :: XML_RSS                                                        |
-// +------------------------------------------------------------------------+
-// | Copyright (c) 2004 Martin Jansen                                       |
-// +------------------------------------------------------------------------+
-// | This source file is subject to version 3.00 of the PHP License,        |
-// | that is available at http://www.php.net/license/3_0.txt.               |
-// | If you did not receive a copy of the PHP license and are unable to     |
-// | obtain it through the world-wide-web, please send a note to            |
-// | license@php.net so we can mail you a copy immediately.                 |
-// +------------------------------------------------------------------------+
-//
-// $Id$
-//
+/**
+ * Unit testing for parsing with XML_RSS
+ *
+ * PHP Version 5
+ *
+ * @category XML
+ * @package  XML_RSS
+ * @author   Martin Jansen <mj@php.net>
+ * @license  PHP License http://php.net/license
+ * @version  Release: @PACKAGE_VERSION@
+ * @link     XML_RSS_Parsing_Test.php
+ */
 
+$version = '@package_version@';
+if (strstr($version, 'package_version')) {
+    set_include_path(dirname(dirname(__FILE__)) . ':' . get_include_path());
+}
 if (!defined('PHPUnit_MAIN_METHOD')) {
     define('PHPUnit_MAIN_METHOD', 'XML_RSS_Parsing_Test::main');
 }
 
-require_once "PHPUnit/Framework/TestCase.php";
+if (stream_resolve_include_path('PHPUnit/Framework/TestCase.php')) {
+    include_once 'PHPUnit/Framework/TestCase.php';
+}
 require_once "XML/RSS.php";
 
 /**
@@ -32,7 +36,9 @@ class XML_RSS_Parsing_Test extends PHPUnit_Framework_TestCase
 {
     public static function main()
     {
-        require_once 'PHPUnit/TextUI/TestRunner.php';
+        if (stream_resolve_include_path('PHPUnit/TextUI/TestRunner.php')) {
+            include_once 'PHPUnit/TextUI/TestRunner.php';
+        }
         PHPUnit_TextUI_TestRunner::run(
             new PHPUnit_Framework_TestSuite('XML_RSS_Parsing_Test')
         );

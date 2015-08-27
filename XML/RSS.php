@@ -4,13 +4,13 @@
 /**
  * XML RSS parser
  *
- * PHP version 4
+ * PHP version 5
  *
  * @category XML
  * @package  XML_RSS
  * @author   Martin Jansen <mj@php.net>
  * @license  PHP License http://php.net/license
- * @version  SVN: $Id$
+ * @version  Release: @PACKAGE_VERSION@
  * @link     http://pear.php.net/package/XML_RSS
  */
 

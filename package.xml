@@ -4,7 +4,7 @@
  <channel>pear.php.net</channel>
  <summary>RSS parser</summary>
  <description>Parser for Resource Description Framework (RDF)
-  Site Summary (RSS) documents.</description>
+Site Summary (RSS) documents.</description>
  <lead>
   <name>Clay Loveless</name>
   <user>clay</user>
@@ -17,35 +17,41 @@
   <email>mj@php.net</email>
   <active>no</active>
  </lead>
- <date>2011-11-06</date>
- <time>22:54:35</time>
+ <date>2015-08-27</date>
+ <time>22:22:35</time>
  <version>
-  <release>1.0.3</release>
+  <release>1.1.0a1</release>
   <api>1.0.0</api>
  </version>
  <stability>
-  <release>stable</release>
+  <release>alpha</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.php.net/license">PHP License</license>
  <notes>
 QA release
-PHPUnit 3.6
-Remove deprecated eregi
+Raising minimum version to PHP 5.4+
+Removed PHPUnit as a dependency as it is no longer distributed via PEAR.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="c6d95b1b607097fee78a03b8bbdd383a" name="tests/test.rss" role="test" />
-   <file baseinstalldir="/" md5sum="1d26320510d7d63b0996b511dd2c170a" name="tests/XML_RSS_Infrastructure_Test.php" role="test" />
-   <file baseinstalldir="/" md5sum="b50ae4396985deb80efc3ccb90522c71" name="tests/XML_RSS_Parsing_Test.php" role="test" />
-   <file baseinstalldir="/" md5sum="13b1df7691d53f1453c976d5ffca4627" name="XML/RSS.php" role="php" />
+   <file baseinstalldir="/" md5sum="c6d95b1b607097fee78a03b8bbdd383a" name="tests/test.rss" role="test"/>
+   <file baseinstalldir="/" md5sum="fa7f3cf0e47f81a4d88538cebdcc47ab" name="tests/XML_RSS_Infrastructure_Test.php" role="test">
+    <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="/" md5sum="c4029ab9ecce982add89b2e194824f7f" name="tests/XML_RSS_Parsing_Test.php" role="test">
+    <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="/" md5sum="f616f207d8609a5ee33c4f65b67b26da" name="XML/RSS.php" role="php">
+    <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
+   </file>
    <file baseinstalldir="/" md5sum="a11721277088bc07ff2e0ca9311244e9" name="README" role="data" />
   </dir>
  </contents>
  <dependencies>
   <required>
    <php>
-    <min>4.4.0</min>
+    <min>5.4.0</min>
    </php>
    <pearinstaller>
     <min>1.4.0</min>
@@ -57,13 +63,6 @@ Remove deprecated eregi
     <exclude>1.0.1</exclude>
    </package>
   </required>
-  <optional>
-   <package>
-    <name>PHPUnit</name>
-    <channel>pear.phpunit.de</channel>
-    <min>3.6.0</min>
-   </package>
-  </optional>
  </dependencies>
  <phprelease />
  <changelog>
@@ -212,6 +211,23 @@ Req #10404 Please add a timestamp in item array - cweiske
 QA release
 PHPUnit 3.6
 Remove deprecated eregi
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.0a1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-08-27</date>
+   <license uri="http://www.php.net/license">PHP License</license>
+   <notes>
+QA release
+Raising minimum version to PHP 5.4+
+Removed PHPUnit as a dependency as it is no longer distributed via PEAR.
    </notes>
   </release>
  </changelog>
