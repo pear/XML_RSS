@@ -42,7 +42,7 @@ Removed PHPUnit as a dependency as it is no longer distributed via PEAR.
    <file baseinstalldir="/" md5sum="c4029ab9ecce982add89b2e194824f7f" name="tests/XML_RSS_Parsing_Test.php" role="test">
     <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
    </file>
-   <file baseinstalldir="/" md5sum="f616f207d8609a5ee33c4f65b67b26da" name="XML/RSS.php" role="php">
+   <file baseinstalldir="/" md5sum="04fc5517beb2607ee6170595c896e922" name="XML/RSS.php" role="php">
     <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
    </file>
    <file baseinstalldir="/" md5sum="a11721277088bc07ff2e0ca9311244e9" name="README" role="data" />
