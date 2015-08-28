@@ -1,8 +1,15 @@
 language: php
-install:
+
+sudo: false
+
 install:
   - pear install XML_Parser-1.3.6
   - pear install package.xml
+
+script:
+  - phpunit
+  - composer validate
+
 php:
   - 5.4
   - 5.5
