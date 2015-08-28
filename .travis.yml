@@ -1,5 +1,7 @@
 language: php
 install:
+install:
+  - pear install XML_Parser-1.3.6
   - pear install package.xml
 php:
   - 5.4
