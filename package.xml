@@ -35,17 +35,17 @@ Removed PHPUnit as a dependency as it is no longer distributed via PEAR.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="c6d95b1b607097fee78a03b8bbdd383a" name="tests/test.rss" role="test"/>
-   <file baseinstalldir="/" md5sum="fa7f3cf0e47f81a4d88538cebdcc47ab" name="tests/XML_RSS_Infrastructure_Test.php" role="test">
+   <file baseinstalldir="/" name="tests/test.rss" role="test"/>
+   <file baseinstalldir="/" name="tests/XML_RSS_Infrastructure_Test.php" role="test">
     <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
    </file>
-   <file baseinstalldir="/" md5sum="c4029ab9ecce982add89b2e194824f7f" name="tests/XML_RSS_Parsing_Test.php" role="test">
+   <file baseinstalldir="/" name="tests/XML_RSS_Parsing_Test.php" role="test">
     <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
    </file>
-   <file baseinstalldir="/" md5sum="04fc5517beb2607ee6170595c896e922" name="XML/RSS.php" role="php">
+   <file baseinstalldir="/" name="XML/RSS.php" role="php">
     <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
    </file>
-   <file baseinstalldir="/" md5sum="a11721277088bc07ff2e0ca9311244e9" name="README" role="data" />
+   <file baseinstalldir="/" name="README" role="data" />
   </dir>
  </contents>
  <dependencies>
