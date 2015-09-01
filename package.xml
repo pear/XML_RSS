@@ -45,7 +45,7 @@ Removed PHPUnit as a dependency as it is no longer distributed via PEAR.
    <file baseinstalldir="/" name="XML/RSS.php" role="php">
     <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
    </file>
-   <file baseinstalldir="/" name="README" role="data" />
+   <file baseinstalldir="/" name="README" role="doc" />
   </dir>
  </contents>
  <dependencies>
