@@ -46,6 +46,7 @@ Removed PHPUnit as a dependency as it is no longer distributed via PEAR.
     <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
    </file>
    <file baseinstalldir="/" name="README" role="doc" />
+   <file baseinstalldir="/" name="LICENSE" role="doc" />
   </dir>
  </contents>
  <dependencies>
