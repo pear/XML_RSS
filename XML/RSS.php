@@ -261,17 +261,17 @@ class XML_RSS extends XML_Parser
 
         if ($element == 'ITEM') {
             $this->items[] = $this->item;
-            $this->item = '';
+            $this->item = array();
         }
 
         if ($element == 'IMAGE') {
             $this->images[] = $this->image;
-            $this->image = '';
+            $this->image = array();
         }
 
         if ($element == 'TEXTINPUT') {
             $this->textinputs = $this->textinput;
-            $this->textinput = '';
+            $this->textinput = array();
         }
 
         if ($element == 'ENCLOSURE') {
