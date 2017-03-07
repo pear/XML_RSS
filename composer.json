@@ -28,10 +28,11 @@
     },
     "type": "library",
     "require": {
-        "pear/pear_exception": "*",
-        "pear/xml_parser": "*"
+        "php": ">=5.4.0",
+        "pear/pear_exception": "@stable",
+        "pear/xml_parser": "@stable"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "^4"
     }
 }
