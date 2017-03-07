@@ -12,19 +12,6 @@
  * @link     XML_RSS_Infrastructure_Test.php
  */
 
-$version = '@package_version@';
-if (strstr($version, 'package_version')) {
-    set_include_path(dirname(dirname(__FILE__)) . ':' . get_include_path());
-}
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'XML_RSS_Infrastructure_Test::main');
-}
-
-if (stream_resolve_include_path('PHPUnit/Framework/TestCase.php')) {
-    include_once 'PHPUnit/Framework/TestCase.php';
-}
-require_once "XML/RSS.php";
-
 /**
  * Unit test suite for the XML_RSS package
  *
@@ -71,7 +58,4 @@ class XML_RSS_Infrastructure_Test extends PHPUnit_Framework_TestCase
     }
 }
 
-if (PHPUnit_MAIN_METHOD == 'XML_RSS_Infrastructure_Test::main') {
-    XML_RSS_Infrastructure_Test::main();
-}
 ?>

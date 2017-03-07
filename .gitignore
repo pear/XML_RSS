@@ -2,3 +2,12 @@
 composer.lock
 composer.phar
 vendor
+
+*.tgz
+
+# Eclipse
+.buildpath
+.project
+.settings/
+
+build/
